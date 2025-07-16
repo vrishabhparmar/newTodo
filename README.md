@@ -6,5 +6,41 @@ npm create vite@latest react-projects -- --template react
 
 ## Todo App
 
+Application which allows the user to add, delete, and update the entry
+
+### Features
+
+1. Add
+2. Delete
+3. Edit (Mark as complete or edit the entry)
+4. List all todos
+
+### Tech Stack
+
+1. React + Hooks
+
+### Steps to build a react app
+
+1. Break the UI into component heirarchy
+
+TodoCompenent
+    |-->    Header  
+    |-->    Add item 
+    |-->    Todo List
+                |-->  listItem 
+
+2. Build a Static version of the react
+
+3. Find the minimal but complete representation of the UI state
+
+Here we need to store all the list items and it can be changed by editing a paricular item 
+
+We can also add a new item to the list as well as delete it. 
+
+Initially we will have empty todo list. 
+
+
+
+
 
 
