@@ -40,6 +40,13 @@ We can also add a new item to the list as well as delete it.
 Initially we will have empty todo list. 
 
 
+4. Identify where your state should live
+
+    For the todo app state doesn't flow down because we are placing all the elements in same components
+
+5.  Add inverse data flow
+
+
 
 
 
