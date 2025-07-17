@@ -6,9 +6,15 @@ import TodoComponent from './components/TodoComponent.jsx'
 
 function App() {
     return(
-      <>
-        <TodoComponent/>
-      </>
+      <div className='app'>
+        <div className='children'>Todo-list</div>
+        <div className='children'>2</div>
+        <div className='children'>3</div>
+        <div className='children'>4</div>
+        <div className='children'>5</div>
+        <div className='children'>6</div>
+        
+      </div>
     )
 }
 

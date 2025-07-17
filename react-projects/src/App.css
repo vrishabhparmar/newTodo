@@ -1,0 +1,74 @@
+
+.app{
+  display: grid;
+  height: 100vh;
+  width: 100vh;
+  grid-template-columns: repeat(3,150px);
+  grid-template-rows: repeat(3,150px);
+  gap: 50px;
+}
+
+.children{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0071FF;
+  font-size: 40px;
+  color: white;
+
+}
+
+.children:hover{
+  background-color: #D9D9D9;
+  color: #0071FF;
+}
+
+.todo{
+  min-width: 400px ;
+  min-height: 400px;
+  border: 1px solid transparent;
+  background-color: #B5F0FF;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  
+}
+
+.header{
+  border: none;
+}
+
+.todo-input{
+  border: none;
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.add-button{
+  border: none;
+  height: 40px;
+  width: 60px;
+  border-radius: 5px;
+  color: white;
+  background-color: chocolate;
+}
+
+.delete-button{
+  border: none;
+  height: 40px;
+  width: 60px;
+  border-radius: 5px;
+  color: white;
+  background-color: #787776;
+}
+
+.list-item{
+  display: flex;
+  width: 80%;
+  height: 40px;
+  border: 1px solid none; 
+  background-color: #D9D9D9;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
