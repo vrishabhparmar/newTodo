@@ -1,19 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import TodoComponent from './components/TodoComponent.jsx'
+import TodoComponent from './components/TodoComponent'
+import { Navbar } from './components/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Projects } from './pages/Projects'
+import { Contacts } from './pages/Contacts'
+import { Products } from './pages/Products'
 
 function App() {
     return(
       <div className='app'>
-        <div className='children'>Todo-list</div>
-        <div className='children'>2</div>
-        <div className='children'>3</div>
-        <div className='children'>4</div>
-        <div className='children'>5</div>
-        <div className='children'>6</div>
-        
+         <Navbar/>
+         <div className='container'>
+         <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/projects" element={<Projects/>}/>
+          <Route path="/products" element={<Products/>}/>
+          <Route path="/contacts" element={<Contacts/>}/>
+         </Routes>
+         </div>
       </div>
     )
 }
