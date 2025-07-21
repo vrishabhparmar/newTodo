@@ -46,7 +46,7 @@ Initially we will have empty todo list.
 
 5.  Add inverse data flow
 
-### React Router
+## React Router
 
 To add routing service to you react application you can use 'react-router-dom'. Import Browser router from react-router-dom then surround the <App /> component with it. 
 
@@ -118,9 +118,63 @@ function App() {
 }
 ```
 
+## React Router Part-II
 
+Create a folder named 'layout' and then create a new file name 'RootLayout.jsx'. which will act as a root link for all the other pages. Import <Outlet /> from react-router-dom which will be used as placeholder for routes we will be creating further.
 
+```Javacript 
 
+import React from 'react'
+import { Navbar } from '../components/Navbar'
+import { Outlet } from 'react-router-dom'
+
+export const RootLayout = () => {
+  return (
+    <div>
+        <Navbar />
+        <div className="container">
+            <Outlet />
+        </div>
+        
+    </div>
+  )
+}
+
+```
+
+Another way to create the router service is using createBrowserRouter(). Import createBrowserRouter(), createRoutesFromElements(), RouterProvider
+
+```Javascript 
+
+import TodoComponent from './components/TodoComponent'
+import { Navbar } from './components/Navbar'
+import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Projects } from './pages/Projects'
+import { Contacts } from './pages/Contacts'
+import { Products } from './pages/Products'
+import { RootLayout } from './layout/RootLayout'
+
+function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RootLayout />}>
+          <Route index element={<Home/>}/>
+          <Route path="projects" element={<Projects/>}/>
+          <Route path="products" element={<Products/>}/>
+          <Route path="contacts" element={<Contacts/>}/>
+      </Route>
+    )
+  )
+    return(
+      <RouterProvider router={router} />
+    )
+}
+
+export default App
+
+```
 
 
 
