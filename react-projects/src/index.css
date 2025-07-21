@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 280;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -31,7 +31,10 @@ a{
   display: inline-block;
   padding: 5px 10px;
   margin: 0 10px;
-  color: #0f0f0f;
+}
+
+a.active{
+  color: #02A1BD;
 }
 
 .navbar ul li:hover{
@@ -39,10 +42,10 @@ a{
 }
 
 .navbar button{
-  background-color: #02A1BD;
-  color: #fff;
+  background-color: #B5F0FF;
+  color: #02A1BD;
   padding: 12px 25px;
-  border: 0;
+  border: 0.2px solid #02A1BD;
   outline: 0;
   border-radius: 30px;
   font-size: 16px;
