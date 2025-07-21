@@ -122,7 +122,7 @@ function App() {
 
 Create a folder named 'layout' and then create a new file name 'RootLayout.jsx'. which will act as a root link for all the other pages. Import <Outlet /> from react-router-dom which will be used as placeholder for routes we will be creating further.
 
-```Javacript 
+```Javascript 
 
 import React from 'react'
 import { Navbar } from '../components/Navbar'
