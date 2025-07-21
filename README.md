@@ -61,7 +61,16 @@ createRoot(document.getElementById('root')).render(
 ) 
 ```
 
-Create a Navbar component to set the Navigation service
+Create a Navbar component to set the Navigation service, Import Navlink form react-router-dom. <Navlink /> is a better option than <Link /> because it helpes the browser detect which link or tab is currently acrive and hence can be showed.
+
+We can use the CSS active property to display 
+
+```CSS 
+a.active{
+  color: #02A1BD;
+}
+```
+Import Navlink for building navigation
 
 ```Javascript  
 import { NavLink } from 'react-router-dom'
@@ -79,8 +88,10 @@ export const Navbar = () => {
         <button>Get Started</button>
     </div>
   )
-}```
+}
+```
 
+Import Routes, Route from 'react-router-dom' 
 
 ```Javascript 
 import { Navbar } from './components/Navbar'
