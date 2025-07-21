@@ -1,4 +1,4 @@
-# React Todo
+# React Todo + Reat Router
 
 ## Steps for creating a new React App
 
@@ -45,6 +45,21 @@ Initially we will have empty todo list.
     For the todo app state doesn't flow down because we are placing all the elements in same components
 
 5.  Add inverse data flow
+
+### React Router
+
+    To add routing service to you react application you can use 'react-router-dom'. Import Browser router from react-router-dom then surround the <App /> component with it. 
+
+``` Javascript 
+import App from './App.jsx'
+import {BrowserRouter} from 'react-router-dom'
+
+createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+) ```
+
 
 
 
