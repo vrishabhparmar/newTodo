@@ -48,9 +48,9 @@ Initially we will have empty todo list.
 
 ### React Router
 
-    To add routing service to you react application you can use 'react-router-dom'. Import Browser router from react-router-dom then surround the <App /> component with it. 
+To add routing service to you react application you can use 'react-router-dom'. Import Browser router from react-router-dom then surround the <App /> component with it. 
 
-``` Javascript 
+```Javascript 
 import App from './App.jsx'
 import {BrowserRouter} from 'react-router-dom'
 
@@ -58,7 +58,54 @@ createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <App />
   </BrowserRouter>
-) ```
+) 
+```
+
+Create a Navbar component to set the Navigation service
+
+```Javascript  
+import { NavLink } from 'react-router-dom'
+
+export const Navbar = () => {
+  return (
+    <div className='navbar'>
+        <img src={svg} alt='logo'></img>
+        <ul>
+            <NavLink to='/'><li>Home</li></NavLink>
+            <NavLink to='/products'><li>Products</li></NavLink>
+            <NavLink to='/projects'><li>Projects</li></NavLink>
+            <NavLink to='/contacts'><li>Contacts</li></NavLink>
+        </ul>
+        <button>Get Started</button>
+    </div>
+  )
+}```
+
+
+```Javascript 
+import { Navbar } from './components/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Projects } from './pages/Projects'
+import { Contacts } from './pages/Contacts'
+import { Products } from './pages/Products'
+
+function App() {
+    return(
+      <div className='app'>
+         <Navbar/>
+         <div className='container'>
+         <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/projects" element={<Projects/>}/>
+          <Route path="/products" element={<Products/>}/>
+          <Route path="/contacts" element={<Contacts/>}/>
+         </Routes>
+         </div>
+      </div>
+    )
+}
+```
 
 
 
