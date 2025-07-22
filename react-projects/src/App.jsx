@@ -7,6 +7,7 @@ import { Contacts } from './pages/Contacts'
 import { Products } from './pages/Products'
 import { RootLayout } from './layout/RootLayout'
 import { ProjectLayout } from './layout/ProjectLayout'
+import { NotFound } from './components/NotFound'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           </Route>
           <Route path="products" element={<Products/>}/>
           <Route path="contacts" element={<Contacts/>}/>
+          <Route path='*' element={<NotFound />} />
       </Route>
     )
   )
