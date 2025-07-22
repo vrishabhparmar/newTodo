@@ -213,6 +213,66 @@ export const Navbar = () => {
 
 ## Nested Navigation 
 
+Inside the project page I have created route for Todo app. 
 
+```Javascript 
+
+import TodoComponent from './components/TodoComponent'
+import { Navbar } from './components/Navbar'
+import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Projects } from './pages/Projects'
+import { Contacts } from './pages/Contacts'
+import { Products } from './pages/Products'
+import { RootLayout } from './layout/RootLayout'
+import { ProjectLayout } from './layout/ProjectLayout'
+
+function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RootLayout />}>
+          <Route index element={<Home/>}/>
+          <Route path="projects" element={<ProjectLayout/>}>
+              <Route path='todo' element={<TodoComponent/>}/>
+          </Route>
+          <Route path="products" element={<Products/>}/>
+          <Route path="contacts" element={<Contacts/>}/>
+      </Route>
+    )
+  )
+    return(
+      <RouterProvider router={router} />
+    )
+}
+
+export default App
+
+
+```
+Usse 'useNavigation' hook to redirect it to the todo component
+
+```Javascript
+
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export const Projects = () => {
+
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h1>Projects Page</h1>
+      <div className="project-nav">
+        <button onClick={() => navigate(-1)}>Back</button>
+        <button onClick={() => navigate('todo')}>Todo</button>
+      </div>
+    </div>
+  )
+}
+
+
+```
 
 
