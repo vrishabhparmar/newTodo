@@ -1,0 +1,32 @@
+{
+    "jobs":[
+        {
+            "id":1,
+            "title":"Full stack developer",
+            "salary":160000,
+            "description":"Writing a good job description is essential to help you attract the most qualified candidates for your job. With more than 20 million jobs listed on Indeed, a great job description can help your jobs stand out from the rest. Your job descriptions are where you present your company and your job to your future employee.",
+            "location":"Banglore IN"
+        },
+        {
+            "id":2,
+            "title":"Developer",
+            "salary":170000,
+            "description":"Writing a good job description is essential to help you attract the most qualified candidates for your job. With more than 20 million jobs listed on Indeed, a great job description can help your jobs stand out from the rest. Your job descriptions are where you present your company and your job to your future employee.",
+            "location":"Mumbai"
+        },
+        {
+            "id":3,
+            "title":"Java Developer",
+            "salary":170000,
+            "description":"Writing a good job description is essential to help you attract the most qualified candidates for your job. With more than 20 million jobs listed on Indeed, a great job description can help your jobs stand out from the rest. Your job descriptions are where you present your company and your job to your future employee.",
+            "location":"Mumbai"
+        },
+        {
+            "id":4,
+            "title":"Python Developer",
+            "salary":170000,
+            "description":"Writing a good job description is essential to help you attract the most qualified candidates for your job. With more than 20 million jobs listed on Indeed, a great job description can help your jobs stand out from the rest. Your job descriptions are where you present your company and your job to your future employee.",
+            "location":"Mumbai"
+        }
+    ]
+}

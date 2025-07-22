@@ -11,9 +11,10 @@ export const Navbar = () => {
         <img src={svg} alt='logo'></img>
         <ul>
             <NavLink to='/'><li>Home</li></NavLink>
-            <NavLink to='/products'><li>Products</li></NavLink>
             <NavLink to='/projects'><li>Projects</li></NavLink>
             <NavLink to='/contacts'><li>Contacts</li></NavLink>
+            <NavLink to='/jobs'><li>Career</li></NavLink>
+
         </ul>
         <button onClick={() => navigate('/projects',{replace:true})}>Get Started</button>
     </div>

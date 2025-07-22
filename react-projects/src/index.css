@@ -84,3 +84,41 @@ a.active{
   font-size: 16px;
   cursor: pointer;
 }
+
+.job-details{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0px ;
+}
+
+.job-details .job-item{
+  border: none;
+  padding: 10px 15px;
+  background-color: rgb(233, 230, 230);
+  color: black;
+}
+
+.job-details .job-item h3{
+  font-weight: 500;
+}
+
+.job-description{
+  padding:  50px 0;
+}
+
+.job-description p{
+  max-width: 800px;
+  padding: 10px 0;
+}
+
+.back-button{
+  background-color: #000000;
+  color: #fefdfd;
+  padding: 10px 15px;
+  outline: 0;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
