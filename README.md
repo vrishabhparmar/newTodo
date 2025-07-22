@@ -312,4 +312,86 @@ export default App
 
 
 ```
+## Dynamic URL and Error Page
 
+You can set up a loader function which can fetch data using a api or some json file and put put it under a loader function which can be mounted upon the <Route/>. This will fetch the data before mounting and then mount the component. 
+
+You can also use an error component page which can be use to show if the data fetched is not available. 
+
+```Javascript
+
+import React from 'react'
+import { useLoaderData } from 'react-router-dom'
+
+const JobDetails = () => {
+
+    const jobDetails = useLoaderData();
+  return (
+    <div className='job-description'>
+        <p><span style={{fontWeight:"bold"}}>Title: </span> {jobDetails.title}</p>
+        <p><span style={{fontWeight:"bold"}}>Salary: </span> {jobDetails.salary}</p>
+        <p><span style={{fontWeight:"bold"}}>Description: </span> {jobDetails.description}</p>
+        <button className='back-button'>Apply</button>
+    </div>
+  )
+
+}
+
+export default JobDetails
+
+export const jobDetailsLoader = async ({params}) => {
+    const {id} = params;
+    const res = await fetch(`http://localhost:3000/jobs/${id}`);
+
+    if(!res.ok) throw Error('Job decription not present');
+
+    return res.json();
+} 
+
+```
+You can use ':id' parameter and then get the params value which would be carried by the Loader prop. 
+
+```Javascript
+
+import TodoComponent from './components/TodoComponent'
+import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Projects } from './pages/Projects'
+import { Contacts } from './pages/Contacts'
+import { Products } from './pages/Products'
+import { RootLayout } from './layout/RootLayout'
+import { ProjectLayout } from './layout/ProjectLayout'
+import { NotFound } from './components/NotFound'
+import { Jobs, jobsLoader } from './pages/Jobs'
+import { JobsLayout } from './layout/JobsLayout'
+import JobDetails, { jobDetailsLoader } from './components/JobDetails'
+import Error from './components/Error'
+
+function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RootLayout />}>
+          <Route index element={<Home/>}/>
+          <Route path="projects" element={<ProjectLayout/>}>
+              <Route path='todo' element={<TodoComponent/>}/>
+          </Route>
+          <Route path="products" element={<Products/>}/>
+          <Route path="contacts" element={<Contacts/>}/>
+          <Route path="jobs" element={<JobsLayout />} errorElement={<Error/>}>
+              <Route index element={<Jobs/>} loader={jobsLoader} />
+              <Route path=':id' element={<JobDetails/>} loader={jobDetailsLoader} />
+          </ Route>
+          <Route path='*' element={<NotFound />} />
+      </Route>
+    )
+  )
+    return(
+      <RouterProvider router={router} />
+    )
+}
+
+export default App
+
+
+```
