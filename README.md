@@ -1,4 +1,4 @@
-# React Todo + Reat Router
+# React Todo + React Router
 
 ## Steps for creating a new React App
 
@@ -175,6 +175,44 @@ function App() {
 export default App
 
 ```
+Remove <BrowserRouter /> surrounding the <App /> from main.jsx
+
+## useNavgigate hook
+
+We can use 'useNavigate' hook to create links for some sepate buttons which will redirect outside the current application.
+
+```Javascript 
+
+import React from 'react'
+import svg from '../assets/react.svg'
+import { NavLink, useNavigate } from 'react-router-dom'
+
+export const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  return (
+    <div className='navbar'>
+        <img src={svg} alt='logo'></img>
+        <ul>
+            <NavLink to='/'><li>Home</li></NavLink>
+            <NavLink to='/products'><li>Products</li></NavLink>
+            <NavLink to='/projects'><li>Projects</li></NavLink>
+            <NavLink to='/contacts'><li>Contacts</li></NavLink>
+        </ul>
+        <button onClick={() => navigate('/projects',{replace:true})}>Get Started</button>
+    </div>
+  )
+}
+
+
+```
+
+{replace:true} will change the current navigation history will the mentioned path '/project' 
+
+
+## Nested Navigation 
+
 
 
 

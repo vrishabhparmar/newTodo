@@ -6,6 +6,7 @@ import { Projects } from './pages/Projects'
 import { Contacts } from './pages/Contacts'
 import { Products } from './pages/Products'
 import { RootLayout } from './layout/RootLayout'
+import { ProjectLayout } from './layout/ProjectLayout'
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
     createRoutesFromElements(
       <Route path='/' element={<RootLayout />}>
           <Route index element={<Home/>}/>
-          <Route path="projects" element={<Projects/>}/>
+          <Route path="projects" element={<ProjectLayout/>}>
+              <Route path='todo' element={<TodoComponent/>}/>
+          </Route>
           <Route path="products" element={<Products/>}/>
           <Route path="contacts" element={<Contacts/>}/>
       </Route>

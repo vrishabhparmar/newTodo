@@ -1,8 +1,11 @@
 import React from 'react'
 import svg from '../assets/react.svg'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className='navbar'>
         <img src={svg} alt='logo'></img>
@@ -12,7 +15,7 @@ export const Navbar = () => {
             <NavLink to='/projects'><li>Projects</li></NavLink>
             <NavLink to='/contacts'><li>Contacts</li></NavLink>
         </ul>
-        <button>Get Started</button>
+        <button onClick={() => navigate('/projects',{replace:true})}>Get Started</button>
     </div>
   )
 }
